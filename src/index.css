@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.container {
+  max-width: 500px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  background: #38bdf8;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:disabled {
+  opacity: 0.6;
+}
+
+.score {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.error {
+  color: #f87171;
+}
