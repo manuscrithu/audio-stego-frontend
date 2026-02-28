@@ -248,16 +248,18 @@ section {
 
 .waveform {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   gap: 3px;
-  height: 64px;
+  height: 128px;
 }
 
 .waveform-bar {
   width: 3px;
+  height: calc(var(--h, 20px) * 2);
   border-radius: 3px;
-  background: linear-gradient(to top, #4c1d95, var(--primary));
+  background: linear-gradient(to bottom, var(--primary), #4c1d95, var(--primary));
+  transform-origin: center;
   animation: wave 1s ease-in-out infinite alternate;
 }
 

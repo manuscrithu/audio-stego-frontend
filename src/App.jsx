@@ -7,6 +7,7 @@ import "./index.css";
 export default function App() {
   const [result, setResult] = useState(null);
   const waveformHeights = [8,14,22,35,48,40,52,38,50,42,30,55,44,28,50,60,44,34,24,18,12,22,38,50,58,48,38,28,18,14,20,34,48,52,44,36,26,18,28,40,54,48,36,24,16,22,36,50,44,30];
+  const waveformCenterIndex = (waveformHeights.length - 1) / 2;
 
   return (
     <>
@@ -87,8 +88,8 @@ export default function App() {
                 key={`${height}-${index}`}
                 className="waveform-bar"
                 style={{
-                  height: `${height}px`,
-                  animationDelay: `${index * 0.04}s`,
+                  "--h": `${height}px`,
+                  animationDelay: `${Math.abs(index - waveformCenterIndex) * 0.04}s`,
                 }}
               />
             ))}
@@ -108,27 +109,27 @@ export default function App() {
               <TeamAvatar
                 name="Dilki Chamika"
                 initials="DC"
-                imageSrc="src/assets/images/dilki.jpg"
+                imageSrc="/images/dilki.png"
               />
               <div className="team-name">Dilki Chamika</div>
               <div className="team-role">Team leader & Researcher</div>
-              <div className="team-dept">ICT/21/940</div>
+              <div className="team-dept">ICT/21/817</div>
             </div>
             <div className="team-card">
               <TeamAvatar
                 name="Yehani Athukorala"
                 initials="YA"
-                imageSrc="src/assets/images/yehani.jpg"
+                imageSrc="/images/yehani.png"
               />
               <div className="team-name">Yehani Athukorala</div>
               <div className="team-role">Developer & Researcher</div>
-              <div className="team-dept">ICT/21/940</div>
+              <div className="team-dept">ICT/21/810</div>
             </div>
             <div className="team-card">
               <TeamAvatar
                 name="Bhanuka Wickramasinghe"
                 initials="BW"
-                imageSrc="src/assets/images/bhanuka.jpg"
+                imageSrc="/images/bhanuka.jpg"
               />
               <div className="team-name">Bhanuka Wickramasinghe</div>
               <div className="team-role">Developer & Researcher</div>
