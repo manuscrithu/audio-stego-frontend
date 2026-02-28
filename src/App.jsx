@@ -108,21 +108,21 @@ export default function App() {
               <TeamAvatar
                 name="Dilki Chamika"
                 initials="DC"
-                imageSrc="src/assets/images/dilki.jpg"
+                imageSrc="src/assets/images/dilki.png"
               />
               <div className="team-name">Dilki Chamika</div>
               <div className="team-role">Team leader & Researcher</div>
-              <div className="team-dept">ICT/21/940</div>
+              <div className="team-dept">ICT/21/817</div>
             </div>
             <div className="team-card">
               <TeamAvatar
                 name="Yehani Athukorala"
                 initials="YA"
-                imageSrc="src/assets/images/yehani.jpg"
+                imageSrc="src/assets/images/yehani.png"
               />
               <div className="team-name">Yehani Athukorala</div>
               <div className="team-role">Developer & Researcher</div>
-              <div className="team-dept">ICT/21/940</div>
+              <div className="team-dept">ICT/21/810</div>
             </div>
             <div className="team-card">
               <TeamAvatar
