@@ -33,18 +33,19 @@ export default function AudioUploader({ onResult }) {
   };
 
   return (
-    <div className="card">
-      <h2>Upload an .mp3 Audio File</h2>
+    <div className="demo-card">
+      <h3 className="demo-title">Upload Audio for Suitability Scoring</h3>
+      <p className="demo-subtitle">Select a valid .mp3 file to run the model.</p>
       <input
+        className="file-input"
         type="file"
         accept="audio/mpeg"
         onChange={(e) => setFile(e.target.files[0])}
       />
 
-      <button onClick={handleSubmit} disabled={loading}>
+      <button className="btn-primary demo-btn" onClick={handleSubmit} disabled={loading}>
         {loading ? "Analyzing..." : "Predict Score"}
       </button>
-
       {error && <p className="error">{error}</p>}
     </div>
   );
