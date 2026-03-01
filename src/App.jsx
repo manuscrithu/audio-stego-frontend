@@ -34,7 +34,7 @@ export default function App() {
         </ul>
         <a
           className="nav-cta"
-          href="https://example.com/research-paper"
+          href="https://drive.google.com/file/d/1-xLE8sy97TENULNs8qrCyw8hITbFAXYF/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
         >

@@ -52,7 +52,7 @@ nav {
 }
 
 .nav-logo {
-  font-family: "Syne", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 800;
   font-size: 1.4rem;
   letter-spacing: -0.02em;
@@ -73,9 +73,9 @@ nav {
 }
 
 .nav-links a {
-  font-family: "Space Mono", monospace;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.78rem;
-  color: var(--muted);
+  color: #ffffff;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   letter-spacing: 0.05em;
@@ -88,7 +88,7 @@ nav {
 }
 
 .nav-cta {
-  font-family: "Space Mono", monospace;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.75rem;
   padding: 0.5rem 1.1rem;
   background: transparent;
@@ -125,7 +125,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: "Space Mono", monospace;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -145,7 +145,6 @@ section {
 }
 
 .hero-title {
-  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: clamp(2.2rem, 6vw, 5.2rem);
   line-height: 1.05;
@@ -181,7 +180,7 @@ section {
 
 .btn-primary,
 .btn-outline {
-  font-family: "Space Mono", monospace;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -225,7 +224,7 @@ section {
 }
 
 .stat-num {
-  font-family: "Syne", sans-serif;
+  font-family:"Plus Jakarta Sans", sans-serif;
   font-size: 2rem;
   font-weight: 800;
   color: var(--primary);
@@ -235,7 +234,7 @@ section {
 .metric-label {
   font-size: 0.73rem;
   color: var(--muted);
-  font-family: "Space Mono", monospace;
+  font-family: "Plus Jakarta Sans", sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -287,7 +286,7 @@ section {
 }
 
 .section-label {
-  font-family: "Space Mono", monospace;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -296,7 +295,6 @@ section {
 }
 
 .section-title {
-  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: -0.02em;
@@ -341,7 +339,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Syne", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   color: var(--bg);
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -353,7 +351,7 @@ section {
 }
 
 .team-name {
-  font-family: "Syne", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   margin-bottom: 0.2rem;
 }
@@ -361,7 +359,7 @@ section {
 .team-role {
   font-size: 0.78rem;
   color: var(--primary);
-  font-family: "Space Mono", monospace;
+  font-family: "Plus Jakarta Sans", sans-serif;
   margin-bottom: 0.45rem;
 }
 
@@ -387,7 +385,7 @@ section {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 0.9rem 1.1rem;
-  font-family: "Syne", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.9rem;
 }
 
@@ -411,7 +409,7 @@ section {
 }
 
 .demo-title {
-  font-family: "Syne", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1.2rem;
   margin-bottom: 0.35rem;
 }
@@ -439,7 +437,7 @@ section {
   border-radius: 6px;
   padding: 0.45rem 0.75rem;
   margin-right: 0.7rem;
-  font-family: "Space Mono", monospace;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.72rem;
   cursor: pointer;
 }
@@ -454,7 +452,7 @@ section {
 }
 
 .score {
-  font-family: "Syne", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 2.2rem;
   color: var(--primary);
   margin: 0.55rem 0;
@@ -476,7 +474,7 @@ section {
 }
 
 .metric-val {
-  font-family: "Syne", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 2.2rem;
   font-weight: 800;
   color: var(--primary);
@@ -491,7 +489,7 @@ footer {
 }
 
 .footer-logo {
-  font-family: "Syne", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 800;
   font-size: 1.3rem;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -524,4 +522,4 @@ footer {
   .arch-flow {
     flex-direction: column;
   }
-}
+} 
