@@ -52,7 +52,6 @@ nav {
 }
 
 .nav-logo {
-  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: 1.4rem;
   letter-spacing: -0.02em;
@@ -75,7 +74,6 @@ nav {
 .nav-links a {
   font-family: "Space Mono", monospace;
   font-size: 0.78rem;
-  color: var(--muted);
   padding: 0.5rem 1rem;
   border-radius: 6px;
   letter-spacing: 0.05em;
@@ -409,7 +407,6 @@ section {
 }
 
 .demo-title {
-  font-family: "Syne", sans-serif;
   font-size: 1.2rem;
   margin-bottom: 0.35rem;
 }
@@ -489,7 +486,6 @@ footer {
 }
 
 .footer-logo {
-  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: 1.3rem;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
