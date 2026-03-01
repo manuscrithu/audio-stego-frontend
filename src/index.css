@@ -145,7 +145,6 @@ section {
 }
 
 .hero-title {
-  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: clamp(2.2rem, 6vw, 5.2rem);
   line-height: 1.05;
@@ -225,7 +224,7 @@ section {
 }
 
 .stat-num {
-  font-family: "Syne", sans-serif;
+  font-family: Syne, sans-serif;
   font-size: 2rem;
   font-weight: 800;
   color: var(--primary);
@@ -296,7 +295,6 @@ section {
 }
 
 .section-title {
-  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: -0.02em;
@@ -524,4 +522,4 @@ footer {
   .arch-flow {
     flex-direction: column;
   }
-}
+} 
