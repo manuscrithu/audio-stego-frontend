@@ -1,11 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AudioUploader from "./components/AudioUploader";
 import ScoreResult from "./components/ScoreResult";
 import TeamAvatar from "./components/TeamAvatar";
+import Footer from "./components/Footer";
+import CountUp from "react-countup";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./index.css";
+
+
 
 export default function App() {
   const [result, setResult] = useState(null);
+    useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false
+    });
+      setTimeout(() => {
+    AOS.refresh();
+  }, 500);
+}, []);
+ 
   const waveformHeights = [8,14,22,35,48,40,52,38,50,42,30,55,44,28,50,60,44,34,24,18,12,22,38,50,58,48,38,28,18,14,20,34,48,52,44,36,26,18,28,40,54,48,36,24,16,22,36,50,44,30];
   const waveformCenterIndex = (waveformHeights.length - 1) / 2;
 
@@ -42,7 +58,7 @@ export default function App() {
         </a>
       </nav>
 
-      <section id="home">
+      <section id="home" data-aos="fade-up">
         <div className="hero-badge">
           Deep Learning <span className="dot"></span> Audio Steganography <span className="dot"></span> LSB Scoring
         </div>
@@ -68,15 +84,21 @@ export default function App() {
 
         <div className="stats-bar">
           <div className="stat">
-            <div className="stat-num">78%</div>
+            <div className="stat-num">
+  <CountUp end={78} duration={2} />%
+</div>
             <div className="stat-label">Accuracy</div>
           </div>
           <div className="stat">
-            <div className="stat-num">30dB</div>
+            <div className="stat-num">
+  <CountUp end={30} duration={2} />dB
+</div>
             <div className="stat-label">SNR Avg</div>
           </div>
           <div className="stat">
-            <div className="stat-num">21K+</div>
+            <div className="stat-num">
+  <CountUp end={21000} duration={2} separator="," />+
+</div>
             <div className="stat-label">Samples</div>
           </div>
         </div>
@@ -97,7 +119,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="research-team">
+      <section id="research-team" data-aos="fade-up">
         <div className="section-inner">
           <div className="section-label">01 — Research Team</div>
           <h2 className="section-title">
@@ -139,30 +161,62 @@ export default function App() {
         </div>
       </section>
 
-      <section id="architecture">
+      <section id="architecture" data-aos="fade-up" >
         <div className="section-inner">
           <div className="section-label">02 — System Architecture</div>
           <h2 className="section-title">
             Framework <span className="hl">Architecture</span>
           </h2>
+          <p className="arch-description">
+The proposed framework evaluates audio carriers using deep learning
+to determine their suitability for secure LSB steganographic embedding.
+</p>
           <div className="divider"></div>
           <div className="arch-diagram">
             <div className="arch-flow">
-              <div className="arch-box">Audio Input</div>
-              <span className="arch-arrow">→</span>
-              <div className="arch-box">Feature Extraction</div>
-              <span className="arch-arrow">→</span>
-              <div className="arch-box">Deep CNN Model</div>
-              <span className="arch-arrow">→</span>
-              <div className="arch-box">Suitability Score</div>
-              <span className="arch-arrow">→</span>
-              <div className="arch-box">LSB Embedding</div>
+              <div className="arch-box">
+                 <div className="arch-icon">🎧</div>
+  <h4>Audio Input</h4>
+  <p>MP3 carrier audio uploaded by user</p>
+</div>
+
+<span className="arch-arrow">→</span>
+
+<div className="arch-box">
+   <div className="arch-icon">📊</div>
+  <h4>Feature Extraction</h4>
+  <p>MFCC, spectral and temporal features</p>
+</div>
+
+<span className="arch-arrow">→</span>
+
+<div className="arch-box">
+  <div className="arch-icon">🧠</div>
+  <h4>Deep CNN Model</h4>
+  <p>Deep learning model evaluates suitability</p>
+</div>
+
+<span className="arch-arrow">→</span>
+
+<div className="arch-box">
+  <div className="arch-icon">📈</div>
+  <h4>Suitability Score</h4>
+  <p>Ranking of audio carrier quality</p>
+</div>
+
+<span className="arch-arrow">→</span>
+
+<div className="arch-box">
+  <div className="arch-icon">🔐</div>
+  <h4>LSB Embedding</h4>
+  <p>Secure message embedding in audio</p>
+</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="demo">
+      <section id="demo" data-aos="fade-up" >
         <div className="section-inner">
           <div className="section-label">03 — Live Demo</div>
           <h2 className="section-title">
@@ -176,7 +230,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="results">
+      <section id="results" data-aos="fade-up">
         <div className="section-inner">
           <div className="section-label">04 — Results & Evaluation</div>
           <h2 className="section-title">
@@ -185,28 +239,34 @@ export default function App() {
           <div className="divider"></div>
           <div className="metrics-grid">
             <div className="metric-card">
+              <div className="metric-icon">🎯</div>
               <div className="metric-label">Prediction Accuracy</div>
-              <div className="metric-val">78%</div>
+            <div className="metric-val">
+  <CountUp end={78} duration={2}/>%
+</div>
+
+
             </div>
             <div className="metric-card">
+              <div className="metric-icon">🔊</div>
               <div className="metric-label">Avg Signal-to-Noise</div>
-              <div className="metric-val">30dB</div>
+              <div className="metric-val">
+  <CountUp end={30} duration={2}/>dB
+</div>
             </div>
             <div className="metric-card">
+              <div className="metric-icon">📦</div>
               <div className="metric-label">Embedding Capacity (bps)</div>
-              <div className="metric-val">10240</div>
+             <div className="metric-val">
+  <CountUp end={10240} duration={2}/>
+</div>
             </div>
           </div>
         </div>
       </section>
 
-      <footer>
-        <div className="footer-logo">DeepSteg</div>
-        <div className="footer-text">
-          Intelligent Deep Learning-Based Suitability Scoring Framework for LSB
-          Audio Steganography
-        </div>
-      </footer>
+    <Footer />
+
     </>
   );
 }
