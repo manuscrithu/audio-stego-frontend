@@ -2,7 +2,7 @@ const API_URL = import.meta.env.VITE_API_URL?.trim()
   ? import.meta.env.VITE_API_URL.trim()
   : import.meta.env.DEV
     ? "/api"
-    : "https://audio-stego-production.up.railway.app";
+    :  "https://audio-stego.onrender.com";
 
 export const predictScore = async (audioFile) => {
   const formData = new FormData();
