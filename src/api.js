@@ -1,7 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL?.trim()
   ? import.meta.env.VITE_API_URL.trim()
   : import.meta.env.DEV
-    ? "https://manuscrithu-audio-steg-be.hf.space"
+    ? "/api"
     :  "https://manuscrithu-audio-steg-be.hf.space";
 
 export const predictScore = async (audioFile) => {
