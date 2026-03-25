@@ -528,6 +528,73 @@ visibility: visible;
   color: var(--muted);
 }
 
+.result-panel {
+  text-align: left;
+}
+
+.result-progress {
+  width: 120px;
+  margin: 1rem auto 1.2rem;
+}
+
+.result-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.result-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.28rem 0.7rem;
+  font-size: 0.78rem;
+}
+
+.result-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.result-meta-item {
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+}
+
+.result-meta-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.result-meta-value {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.result-description {
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-bottom: 0.6rem;
+}
+
+.result-text {
+  line-height: 1.5;
+}
+
 .error {
   color: #f8a5c2;
   margin-top: 0.7rem;
