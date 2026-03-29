@@ -139,7 +139,7 @@ export default function App() {
         </div>
       </section>
 
-     <section id="architecture">
+       <section id="architecture">
   <div className="section-inner">
     <div className="section-label">02 — System Architecture</div>
     <h2 className="section-title">
@@ -150,108 +150,110 @@ export default function App() {
       their suitability for secure LSB steganographic embedding.
     </p>
     <div className="divider"></div>
-    <div className="arch-diagram" style={{padding: "2rem"}}>
-      <div className="pipeline-stages">
 
-        {/* Stage I */}
-        <div className="pipeline-stage stage-teal">
-          <div className="stage-header">Stage I — Data collection and preprocessing</div>
-          <div className="stage-boxes">
-            <div className="stage-box">
-              <div className="stage-box-title">Raw audio dataset</div>
-              <div className="stage-box-sub">21,116 MP3/WAV files<br/>varied SR and duration</div>
-            </div>
-            <span className="stage-arrow">→</span>
-            <div className="stage-box">
-              <div className="stage-box-title">Preprocessing</div>
-              <div className="stage-box-sub">Resample → 16 kHz<br/>Pad / trim → 4s (64k samples)</div>
-            </div>
-            <span className="stage-arrow">→</span>
-            <div className="stage-box">
-              <div className="stage-box-title">Saved artefacts</div>
-              <div className="stage-box-sub">preprocessed_audio.npy<br/>(21,116 × 64,000) + file_list.csv</div>
-            </div>
+    <div className="pipeline-stages">
+
+      {/* Stage I */}
+      <div className="pipeline-stage ps-teal">
+        <div className="stage-head">
+          <span className="stage-badge sb-teal">Stage I</span>
+          <span className="stage-title-text">Data collection and preprocessing</span>
+        </div>
+        <div className="stage-boxes">
+          <div className="stage-box">
+            <div className="stage-box-title">Raw audio dataset</div>
+            <div className="stage-box-sub">21,116 MP3/WAV files<br/>Varied SR and duration</div>
+          </div>
+          <span className="stage-arr">→</span>
+          <div className="stage-box">
+            <div className="stage-box-title">Preprocessing</div>
+            <div className="stage-box-sub">Resample → 16 kHz<br/>Pad / trim → 4s (64k samples)</div>
+          </div>
+          <span className="stage-arr">→</span>
+          <div className="stage-box">
+            <div className="stage-box-title">Saved artefacts</div>
+            <div className="stage-box-sub">preprocessed_audio.npy<br/>(21,116 × 64,000) + file_list.csv</div>
           </div>
         </div>
-
-        <div className="pipeline-connector">↓</div>
-
-        {/* Stage II */}
-        <div className="pipeline-stage stage-blue">
-          <div className="stage-header">Stage II — LSB embedding and metric computation</div>
-          <div className="stage-boxes">
-            <div className="stage-box">
-              <div className="stage-box-title">1-bit LSB embedding</div>
-              <div className="stage-box-sub">5 KB fixed secret<br/>int16 substitution<br/>cover + stego WAV pairs</div>
-            </div>
-            <span className="stage-arrow">→</span>
-            <div className="stage-box">
-              <div className="stage-box-title">Quality metrics</div>
-              <div className="stage-box-sub">PSNR, PESQ, STOI<br/>Capacity (bps), MSV<br/>Robustness (BER / AWGN 30dB)</div>
-            </div>
-            <span className="stage-arrow">→</span>
-            <div className="stage-box">
-              <div className="stage-box-title">Overall score</div>
-              <div className="stage-box-sub">Weighted composite [0–10]<br/>imp 35%, rob 30%<br/>cap 20%, comp 15%</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="pipeline-connector">↓</div>
-
-        {/* Stage III */}
-        <div className="pipeline-stage stage-pink">
-          <div className="stage-header">Stage III — Deep feature extraction (two-branch)</div>
-          <div className="stage-boxes stage-boxes--wide">
-            <div className="stage-box stage-box--wide">
-              <div className="stage-box-title">Branch A — CNN-LSTM</div>
-              <div className="stage-box-sub">
-                Mel-spectrogram (128 × 251)<br/>
-                2× Conv1D + BatchNorm + Dropout<br/>
-                LSTM (64 units, L2 reg)<br/>
-                Dense embedding layer<br/>
-                Output: 128-dim task-specific vector
-              </div>
-            </div>
-            <div className="stage-box stage-box--wide">
-              <div className="stage-box-title">Branch B — MERT-v1-95M</div>
-              <div className="stage-box-sub">
-                Pre-trained music transformer<br/>
-                95M parameters, frozen weights<br/>
-                Last-hidden-state mean-pool<br/>
-                Batch 16, T4 GPU (~30 min)<br/>
-                Output: 768-dim acoustic vector
-              </div>
-            </div>
-          </div>
-          <div className="stage-concat">Concatenate → 896-dim feature vector</div>
-        </div>
-
-        <div className="pipeline-connector">↓</div>
-
-        {/* Stage IV */}
-        <div className="pipeline-stage stage-orange">
-          <div className="stage-header">Stage IV — Ensemble regression model training</div>
-          <div className="stage-scaler">StandardScaler (fit on train only)</div>
-          <div className="stage-boxes">
-            <div className="stage-box">
-              <div className="stage-box-title">XGBoost</div>
-              <div className="stage-box-sub">n=1000, depth=5, lr=0.03<br/>R²=0.7913, MAE=0.1187</div>
-            </div>
-            <div className="stage-box">
-              <div className="stage-box-title">LightGBM</div>
-              <div className="stage-box-sub">n=1000, depth=5, lr=0.03<br/>R²=0.7902, MAE=0.1195</div>
-            </div>
-          </div>
-          <div className="stage-blend">
-            <div className="stage-blend-title">50/50 blend prediction</div>
-            <div className="stage-blend-sub">R²=0.7929, MAE=0.1182, RMSE=0.2001</div>
-          </div>
-        </div>
-
-        <div className="pipeline-footnote">Dataset split: 70% train / 15% validation / 15% test</div>
-
       </div>
+
+      <div className="pipeline-conn">↓</div>
+
+      {/* Stage II */}
+      <div className="pipeline-stage ps-purple">
+        <div className="stage-head">
+          <span className="stage-badge sb-purple">Stage II</span>
+          <span className="stage-title-text">LSB embedding and metric computation</span>
+        </div>
+        <div className="stage-boxes">
+          <div className="stage-box">
+            <div className="stage-box-title">1-bit LSB embedding</div>
+            <div className="stage-box-sub">5 KB fixed secret<br/>int16 substitution<br/>cover + stego WAV pairs</div>
+          </div>
+          <span className="stage-arr">→</span>
+          <div className="stage-box">
+            <div className="stage-box-title">Quality metrics</div>
+            <div className="stage-box-sub">PSNR, PESQ, STOI<br/>Capacity (bps), MSV<br/>Robustness (BER / AWGN 30dB)</div>
+          </div>
+          <span className="stage-arr">→</span>
+          <div className="stage-box">
+            <div className="stage-box-title">Overall score</div>
+            <div className="stage-box-sub">Weighted composite [0–10]<br/>imp 35%, rob 30%<br/>cap 20%, comp 15%</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="pipeline-conn">↓</div>
+
+      {/* Stage III */}
+      <div className="pipeline-stage ps-coral">
+        <div className="stage-head">
+          <span className="stage-badge sb-coral">Stage III</span>
+          <span className="stage-title-text">Deep feature extraction (two-branch)</span>
+        </div>
+        <div className="stage-boxes stage-boxes--grid2">
+          <div className="stage-box">
+            <div className="stage-box-title">Branch A — CNN-LSTM</div>
+            <div className="stage-box-sub">Mel-spectrogram (128 × 251)<br/>2× Conv1D + BatchNorm + Dropout<br/>LSTM (64 units, L2 reg)<br/>Dense embedding layer</div>
+            <span className="dim-pill pill-purple">128-dim output</span>
+          </div>
+          <div className="stage-box">
+            <div className="stage-box-title">Branch B — MERT-v1-95M</div>
+            <div className="stage-box-sub">Pre-trained music transformer<br/>95M parameters, frozen weights<br/>Last-hidden-state mean-pool<br/>Batch 16, T4 GPU (~30 min)</div>
+            <span className="dim-pill pill-purple">768-dim output</span>
+          </div>
+        </div>
+        <div className="concat-pill">Concatenate → 896-dim feature vector</div>
+      </div>
+
+      <div className="pipeline-conn">↓</div>
+
+      {/* Stage IV */}
+      <div className="pipeline-stage ps-amber">
+        <div className="stage-head">
+          <span className="stage-badge sb-amber">Stage IV</span>
+          <span className="stage-title-text">Ensemble regression model training</span>
+        </div>
+        <div className="scaler-pill">StandardScaler (fit on train only)</div>
+        <div className="stage-boxes stage-boxes--grid2">
+          <div className="stage-box">
+            <div className="stage-box-title">XGBoost</div>
+            <div className="stage-box-sub">n=1000, depth=5, lr=0.03<br/>subsample=0.8</div>
+            <span className="dim-pill pill-teal">R²=0.7913 · MAE=0.1187</span>
+          </div>
+          <div className="stage-box">
+            <div className="stage-box-title">LightGBM</div>
+            <div className="stage-box-sub">n=1000, depth=5, lr=0.03<br/>subsample=0.8</div>
+            <span className="dim-pill pill-teal">R²=0.7902 · MAE=0.1195</span>
+          </div>
+        </div>
+        <div className="blend-box">
+          <div className="blend-title">50/50 blend prediction</div>
+          <div className="blend-sub">R²=0.7929 · MAE=0.1182 · RMSE=0.2001</div>
+        </div>
+      </div>
+
+      <div className="pipeline-footnote">Dataset split: 70% train / 15% validation / 15% test</div>
     </div>
   </div>
 </section>
