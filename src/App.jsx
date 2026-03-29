@@ -67,13 +67,13 @@ export default function App() {
         </div>
 
         <div className="stats-bar">
+            <div className="stat">
+            <div className="stat-num">79.3%</div>
+            <div className="stat-label">Accuracy (R²)</div>
+        </div>
           <div className="stat">
-            <div className="stat-num">78%</div>
-            <div className="stat-label">Accuracy</div>
-          </div>
-          <div className="stat">
-            <div className="stat-num">30dB</div>
-            <div className="stat-label">SNR Avg</div>
+            <div className="stat-num">92.3dB</div>
+            <div className="stat-label">PSNR Avg</div>
           </div>
           <div className="stat">
             <div className="stat-num">21K+</div>
@@ -176,29 +176,47 @@ export default function App() {
         </div>
       </section>
 
-      <section id="results">
-        <div className="section-inner">
-          <div className="section-label">04 — Results & Evaluation</div>
-          <h2 className="section-title">
-            Performance <span className="hl">Results</span>
-          </h2>
-          <div className="divider"></div>
-          <div className="metrics-grid">
-            <div className="metric-card">
-              <div className="metric-label">Prediction Accuracy</div>
-              <div className="metric-val">78%</div>
-            </div>
-            <div className="metric-card">
-              <div className="metric-label">Avg Signal-to-Noise</div>
-              <div className="metric-val">30dB</div>
-            </div>
-            <div className="metric-card">
-              <div className="metric-label">Embedding Capacity (bps)</div>
-              <div className="metric-val">10240</div>
-            </div>
-          </div>
-        </div>
-      </section>
+   <section id="results">
+  <div className="section-inner">
+    <div className="section-label">04 — Results & Evaluation</div>
+    <h2 className="section-title">
+      Performance <span className="hl">Results</span>
+    </h2>
+    <div className="divider"></div>
+    <div className="metrics-grid">
+      <div className="metric-card">
+        <div className="metric-icon">🎯</div>
+        <div className="metric-label">Prediction Accuracy (R²)</div>
+        <div className="metric-val">79.3%</div>
+      </div>
+      <div className="metric-card">
+        <div className="metric-icon">📡</div>
+        <div className="metric-label">Avg Signal-to-Noise (PSNR)</div>
+        <div className="metric-val">92.3 dB</div>
+      </div>
+      <div className="metric-card">
+        <div className="metric-icon">📦</div>
+        <div className="metric-label">Embedding Capacity (bps)</div>
+        <div className="metric-val">10,240</div>
+      </div>
+      <div className="metric-card">
+        <div className="metric-icon">🔊</div>
+        <div className="metric-label">Perceptual Quality (PESQ)</div>
+        <div className="metric-val">4.62 / 4.5</div>
+      </div>
+      <div className="metric-card">
+        <div className="metric-icon">🧠</div>
+        <div className="metric-label">Intelligibility (STOI)</div>
+        <div className="metric-val">0.9999</div>
+      </div>
+      <div className="metric-card">
+        <div className="metric-icon">📉</div>
+        <div className="metric-label">Prediction Error (MAE)</div>
+        <div className="metric-val">0.118</div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <footer>
         <div className="footer-logo">DeepSteg</div>
