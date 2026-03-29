@@ -528,4 +528,130 @@ footer {
   .arch-flow {
     flex-direction: column;
   }
+
+  .pipeline-stages {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pipeline-stage {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+}
+
+.stage-teal  { border-color: rgba(96, 165, 250, 0.35);  background: rgba(96, 165, 250, 0.04); }
+.stage-blue  { border-color: rgba(167, 139, 250, 0.35); background: rgba(167, 139, 250, 0.04); }
+.stage-pink  { border-color: rgba(251, 146, 146, 0.35); background: rgba(251, 146, 146, 0.04); }
+.stage-orange{ border-color: rgba(251, 191, 36, 0.35);  background: rgba(251, 191, 36, 0.04); }
+
+.stage-header {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.stage-boxes {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.stage-boxes--wide {
+  gap: 1rem;
+}
+
+.stage-box {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  flex: 1;
+  min-width: 160px;
+}
+
+.stage-box--wide {
+  min-width: 220px;
+}
+
+.stage-box-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.stage-box-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.stage-arrow {
+  color: var(--muted);
+  font-size: 1.1rem;
+  padding-top: 0.8rem;
+  flex-shrink: 0;
+}
+
+.stage-concat,
+.stage-scaler {
+  margin-top: 0.9rem;
+  text-align: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
+  color: var(--text);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 1rem;
+  display: inline-block;
+}
+
+.stage-scaler {
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.pipeline-connector {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1.3rem;
+  padding: 0.3rem 0;
+}
+
+.stage-blend {
+  margin-top: 0.9rem;
+  background: rgba(96, 250, 180, 0.07);
+  border: 1px solid rgba(96, 250, 180, 0.25);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  text-align: center;
+}
+
+.stage-blend-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.stage-blend-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+.pipeline-footnote {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.6rem;
+}
 } 
