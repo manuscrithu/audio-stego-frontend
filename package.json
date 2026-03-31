@@ -10,8 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-circular-progressbar": "^2.2.0",
+    "react-countup": "^6.5.3",
+    "react-dom": "^19.2.0",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles": "^3.9.1",
+    "wavesurfer.js": "^7.12.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

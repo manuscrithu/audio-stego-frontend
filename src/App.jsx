@@ -1,11 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AudioUploader from "./components/AudioUploader";
 import ScoreResult from "./components/ScoreResult";
 import TeamAvatar from "./components/TeamAvatar";
+import Footer from "./components/Footer";
+import CountUp from "react-countup";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./index.css";
+
+
 
 export default function App() {
   const [result, setResult] = useState(null);
+    useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false
+    });
+      setTimeout(() => {
+    AOS.refresh();
+  }, 500);
+}, []);
+ 
   const waveformHeights = [8,14,22,35,48,40,52,38,50,42,30,55,44,28,50,60,44,34,24,18,12,22,38,50,58,48,38,28,18,14,20,34,48,52,44,36,26,18,28,40,54,48,36,24,16,22,36,50,44,30];
   const waveformCenterIndex = (waveformHeights.length - 1) / 2;
 
@@ -42,7 +58,7 @@ export default function App() {
         </a>
       </nav>
 
-      <section id="home">
+      <section id="home" data-aos="fade-up">
         <div className="hero-badge">
           Deep Learning <span className="dot"></span> Audio Steganography <span className="dot"></span> LSB Scoring
         </div>
@@ -74,9 +90,21 @@ export default function App() {
           <div className="stat">
             <div className="stat-num">92.3dB</div>
             <div className="stat-label">PSNR Avg</div>
+            <div className="stat-num">
+  <CountUp end={78} duration={2} />%
+</div>
+            <div className="stat-label">Accuracy</div>
           </div>
           <div className="stat">
-            <div className="stat-num">21K+</div>
+            <div className="stat-num">
+  <CountUp end={30} duration={2} />dB
+</div>
+            <div className="stat-label">SNR Avg</div>
+          </div>
+          <div className="stat">
+            <div className="stat-num">
+  <CountUp end={21000} duration={2} separator="," />+
+</div>
             <div className="stat-label">Samples</div>
           </div>
         </div>
@@ -97,7 +125,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="research-team">
+      <section id="research-team" data-aos="fade-up">
         <div className="section-inner">
           <div className="section-label">01 — Research Team</div>
           <h2 className="section-title">
@@ -258,7 +286,7 @@ export default function App() {
   </div>
 </section>
 
-      <section id="demo">
+      <section id="demo" data-aos="fade-up" >
         <div className="section-inner">
           <div className="section-label">03 — Live Demo</div>
           <h2 className="section-title">
@@ -272,7 +300,7 @@ export default function App() {
         </div>
       </section>
 
-   <section id="results">
+   <section id="results" data-aos="fade-up">
   <div className="section-inner">
     <div className="section-label">04 — Results & Evaluation</div>
     <h2 className="section-title">
@@ -314,13 +342,8 @@ export default function App() {
   </div>
 </section>
 
-      <footer>
-        <div className="footer-logo">DeepSteg</div>
-        <div className="footer-text">
-          Intelligent Deep Learning-Based Suitability Scoring Framework for LSB
-          Audio Steganography
-        </div>
-      </footer>
+    <Footer />
+
     </>
   );
 }
