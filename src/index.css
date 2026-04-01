@@ -224,7 +224,7 @@ section {
 }
 
 .stat-num {
-  font-family:"Plus Jakarta Sans", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 2rem;
   font-weight: 800;
   color: var(--primary);
@@ -267,7 +267,6 @@ section {
     transform: scaleY(0.5);
     opacity: 0.35;
   }
-
   to {
     transform: scaleY(1);
     opacity: 1;
@@ -300,6 +299,14 @@ section {
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin-bottom: 1.2rem;
+}
+
+.section-sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 780px;
+  margin-bottom: 1.6rem;
 }
 
 .divider {
@@ -400,16 +407,38 @@ padding:10px 0;
 .arch-box {
   background: var(--surface2);
   border: 1px solid var(--border);
-  border-radius:10px;
-padding:14px 16px;
-min-width:150px;
-text-align:center;
-transition:0.3s;
+  border-radius: 10px;
+  padding: 1.4rem 1.2rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  min-width: 140px;
+  flex: 1;
+  max-width: 180px;
 }
-.arch-box h5{
-font-size:14px;
-margin-bottom:4px;
-color:#cfcfff;
+
+.arch-box--highlight {
+  border-color: var(--primary);
+  background: rgba(167, 139, 250, 0.08);
+}
+
+.arch-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+  display: block;
+}
+
+.arch-box-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.arch-box-sub {
+  font-size: 0.76rem;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .arch-box p{
@@ -605,6 +634,12 @@ visibility: visible;
   padding: 1.4rem;
 }
 
+.metric-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
 .metric-val {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 2.2rem;
@@ -619,6 +654,146 @@ background:#0c0b24;
 border-top:1px solid rgba(255,255,255,0.1);
 }
 
+/* ── Pipeline / Architecture ── */
+.pipeline-stages { display: flex; flex-direction: column; gap: 6px; }
+
+.pipeline-stage { border-radius: 14px; padding: 16px 18px; border: 1.5px solid; }
+
+.ps-teal   { border-color: #1D9E75; background: rgba(29,158,117,0.07); }
+.ps-purple { border-color: #534AB7; background: rgba(83,74,183,0.07); }
+.ps-coral  { border-color: #D85A30; background: rgba(216,90,48,0.07); }
+.ps-amber  { border-color: #BA7517; background: rgba(186,117,23,0.07); }
+
+.stage-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+
+.stage-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.sb-teal   { background: rgba(29,158,117,0.2);  color: #9FE1CB; }
+.sb-purple { background: rgba(83,74,183,0.2);   color: #CECBF6; }
+.sb-coral  { background: rgba(216,90,48,0.2);   color: #F5C4B3; }
+.sb-amber  { background: rgba(186,117,23,0.2);  color: #FAC775; }
+
+.stage-title-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.stage-boxes { display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap; }
+
+.stage-boxes--grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.stage-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.stage-box-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.stage-box-sub {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.stage-arr {
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 1rem;
+  padding-top: 8px;
+  flex-shrink: 0;
+}
+
+.dim-pill {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-top: 6px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.pill-purple { background: rgba(83,74,183,0.15);  color: #a78bfa; }
+.pill-teal   { background: rgba(29,158,117,0.15); color: #5DCAA5; }
+
+.concat-pill,
+.scaler-pill {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 14px;
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.scaler-pill { margin-top: 0; margin-bottom: 10px; }
+
+.blend-box {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  border: 1.5px solid #1D9E75;
+  background: rgba(29,158,117,0.07);
+}
+
+.blend-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.blend-sub {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.pipeline-conn {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1.2rem;
+  padding: 2px 0;
+}
+
+.pipeline-footnote {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 2.2rem 1.4rem;
+  text-align: center;
 .footer-logo{
 font-size:24px;
 font-weight:600;
@@ -671,6 +846,13 @@ opacity:0.6;
   .arch-flow {
     flex-direction: column;
   }
+}
+
+@media (max-width: 600px) {
+  .stage-boxes--grid2 {
+    grid-template-columns: 1fr;
+  }
+}
 } 
 .loading-content{
 display:flex;
