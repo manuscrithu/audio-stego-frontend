@@ -82,32 +82,26 @@ export default function App() {
           </a>
         </div>
 
-        <div className="stats-bar">
-            <div className="stat">
-            <div className="stat-num">79.3%</div>
-            <div className="stat-label">Accuracy (R²)</div>
-        </div>
-          <div className="stat">
-            <div className="stat-num">92.3dB</div>
-            <div className="stat-label">PSNR Avg</div>
-            <div className="stat-num">
-  <CountUp end={78} duration={2} />%
+<div className="stats-bar">
+  <div className="stat">
+    <div className="stat-num">
+      <CountUp end={79.3} decimals={1} duration={2} enableScrollSpy scrollSpyOnce />%
+    </div>
+    <div className="stat-label">Accuracy (R²)</div>
+  </div>
+  <div className="stat">
+    <div className="stat-num">
+      <CountUp end={92.3} decimals={1} duration={2} enableScrollSpy scrollSpyOnce />dB
+    </div>
+    <div className="stat-label">PSNR Avg</div>
+  </div>
+  <div className="stat">
+    <div className="stat-num">
+      <CountUp end={21000} duration={2} separator="," enableScrollSpy scrollSpyOnce />+
+    </div>
+    <div className="stat-label">Samples</div>
+  </div>
 </div>
-            <div className="stat-label">Accuracy</div>
-          </div>
-          <div className="stat">
-            <div className="stat-num">
-  <CountUp end={30} duration={2} />dB
-</div>
-            <div className="stat-label">SNR Avg</div>
-          </div>
-          <div className="stat">
-            <div className="stat-num">
-  <CountUp end={21000} duration={2} separator="," />+
-</div>
-            <div className="stat-label">Samples</div>
-          </div>
-        </div>
 
         <div className="waveform-container">
           <div className="waveform">
