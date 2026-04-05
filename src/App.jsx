@@ -119,9 +119,30 @@ export default function App() {
         </div>
       </section>
 
+      <section id="supervisor" data-aos="fade-up">
+        <div className="section-inner">
+          <div className="section-label">01 — Supervisor</div>
+          <h2 className="section-title">
+            Project <span className="hl">Supervisor</span>
+          </h2>
+          <div className="divider"></div>
+          <div className="team-grid">
+            <div className="team-card">
+              <TeamAvatar
+                name="Dr. Nalaka Lankasena"
+                initials="NL"
+                imageSrc="/images/drnalaka.png"
+              />
+              <div className="team-name">Dr. Nalaka Lankasena</div>
+              <div className="team-role">Project Supervisor</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="research-team" data-aos="fade-up">
         <div className="section-inner">
-          <div className="section-label">01 — Research Team</div>
+          <div className="section-label">02 — Research Team</div>
           <h2 className="section-title">
             The <span className="hl">Minds</span> Behind the Research
           </h2>
@@ -151,7 +172,7 @@ export default function App() {
               <TeamAvatar
                 name="Bhanuka Wickramasinghe"
                 initials="BW"
-                imageSrc="/images/bhanuka.jpg"
+                imageSrc="/images/bhanuka.jpeg"
               />
               <div className="team-name">Bhanuka Wickramasinghe</div>
               <div className="team-role">Developer & Researcher</div>
@@ -163,7 +184,7 @@ export default function App() {
 
        <section id="architecture">
   <div className="section-inner">
-    <div className="section-label">02 — System Architecture</div>
+    <div className="section-label">03 — System Architecture</div>
     <h2 className="section-title">
       Framework <span className="hl">Architecture</span>
     </h2>
@@ -282,7 +303,7 @@ export default function App() {
 
       <section id="demo" data-aos="fade-up" >
         <div className="section-inner">
-          <div className="section-label">03 — Live Demo</div>
+          <div className="section-label">04 — Live Demo</div>
           <h2 className="section-title">
             Run the <span className="hl">Application</span>
           </h2>
@@ -296,7 +317,7 @@ export default function App() {
 
    <section id="results" data-aos="fade-up">
   <div className="section-inner">
-    <div className="section-label">04 — Results & Evaluation</div>
+    <div className="section-label">05 — Results & Evaluation</div>
     <h2 className="section-title">
       Performance <span className="hl">Results</span>
     </h2>
